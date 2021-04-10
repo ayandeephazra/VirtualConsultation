@@ -1,0 +1,27 @@
+.register-background{
+  background-color: #2AC3A4;
+  height: 100vh;
+}
+
+.register-card{
+  border-radius: 20px;
+  height: 70vh;
+  width: 70vw;
+  background-color: #ffffff;
+}
+
+.image-container{
+  background-image: url("../../../assets/doctor.jpg");
+  background-size:contain;
+  background-repeat: no-repeat;
+  border-radius:20px;
+}
+
+.register-form{
+  overflow: auto;
+}
+
+button{
+  background-color: #2AC3A4;
+  color: #ffffff;
+}

@@ -1,0 +1,40 @@
+<div class="login-background" fxLayoutAlign="center center">
+  <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" class="login-card mat-elevation-z3">
+    <div fxFlex="50" class="image-container">
+
+    </div>
+    <div fxFlex="50" class="login-form">
+      <form [formGroup]="patientLogin" fxLayout="column">
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
+          <div fxLayout="column">
+            <div>&nbsp;</div>
+            <div class="mat-title">Login</div>
+          </div>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="16px">
+          <mat-form-field appearance="fill" fxFlex>
+            <mat-label class="mat-body-1">Email ID</mat-label>
+            <input matInput placeholder="Email ID" formControlName="emailId" required type="email">
+            <mat-error *ngIf="patientLogin.get('emailId').hasError('required')">
+              <strong>REQUIRED</strong>
+            </mat-error>
+            <mat-error *ngIf="patientLogin.get('emailId').hasError('email')">
+              <strong>Enter Valid Email</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill" fxFlex>
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password" required>
+            <mat-error *ngIf="patientLogin.get('password').hasError('required')">
+              <strong>REQUIRED</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="column"  fxLayoutGap="10px" fxLayoutAlign="center center">
+          <button mat-raised-button routerLink='/home' fxFlex>Login</button>
+          <button mat-raised-button routerLink="/register" fxFlex>Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

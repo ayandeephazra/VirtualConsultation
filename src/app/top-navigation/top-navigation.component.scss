@@ -1,0 +1,30 @@
+.navigation-card{
+  height: 7vh;
+  background-color: #ffffff ;
+  border-bottom: solid lightgrey;
+  padding: 0 16px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.button-container:hover{
+  background-color: lightgray;
+  border-radius: 10px;
+}
+
+.button-container{
+  padding: 3px;
+}
+
+.mb-0{
+  margin-bottom: 0px !important;
+}
+
+
+#app-menu{
+  min-width: 240px;
+  max-width: 30vw;
+  padding: 16px;
+}

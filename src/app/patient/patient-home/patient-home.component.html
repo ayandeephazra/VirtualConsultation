@@ -1,0 +1,44 @@
+<div class="home-container" fxLayout="column">
+  <div class="nav-container">
+    <app-top-navigation></app-top-navigation>
+  </div>
+  <div fxFlex="row">
+    <div fxFlex="30" class="side-nav" fxLayout="column">
+      <div fxFlex="70" class="side-nav-image">
+
+      </div>
+    </div>
+    <div fxFlex="70" class="container">
+      <section>
+        <div fxLayout="column">
+          <div class="mat-headline" fxLayoutAlign="start center">Appointment</div>
+          <div class="mat-body-1" fxLayoutAlign="start center" fxLayout='row' fxLayoutGap="16px"
+            *ngIf='!appointmentBooked'>
+            <div>No Appointments</div>
+            <button mat-raised-button routerLink='/home/appointment'>Book</button>
+          </div>
+          <div class="mat-body-1" fxLayoutAlign="space-between center" fxLayout='row' fxLayoutGap="16px"
+            *ngIf='appointmentBooked'>
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              <div class="notification-message-container" fxLayout="row" fxLayoutGap="48px">
+                <div fxLayout="column" fxLayoutGap="4px">
+                  <div class="mat-caption">Scheduled At</div>
+                  <div class="mat-title">9:30<span class="mat-caption">pm</span></div>
+                </div>
+                <div fxLayout="column" fxLayoutGap="4px">
+                  <div class="mat-caption">Doctor Name</div>
+                  <div class="mat-title">Dr.Doctor</div>
+                </div>
+                <div fxLayout="column" fxLayoutGap="4px">
+                  <div class="mat-caption">Reason For Appointment</div>
+                  <div class="mat-title">Fever</div>
+                </div>
+              </div>
+            </div>
+            <button mat-raised-button>Start Call</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

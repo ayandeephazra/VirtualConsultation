@@ -1,0 +1,35 @@
+<div fxLayout="row" fxLayoutAlign="space-between center" class="navigation-card">
+<div fxLayoutAlign="center center">
+  <a routerLink="/home" class="mat-h1 mb-0">Virtual X</a>
+</div>
+<div>
+  <button mat-flat-button fxFlexAlign="right" fxLayout="row" fxLayoutAlign="start center" [matMenuTriggerFor]="appMenu">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div>User Name</div>
+    <mat-icon>keyboard_arrow_down</mat-icon>
+    </div>
+
+</button>
+<mat-menu #appMenu="matMenu">
+    <ng-template matMenuContent>
+        <div fxLayout="column" fxLayoutGap="16px">
+
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px" id="app-menu">
+
+                <div fxLayout="column" fxLayoutAlign="start" fxLayoutGap="16px">
+                    <a routerLink="/home/profile" class="mat-body-1">View Profile</a>
+                </div>
+            </div>
+
+            <mat-divider></mat-divider>
+            <div fxLayout="column" fxLayoutAlign="center center" class="manage-account-button">
+                <button mat-stroked-button color="warn" routerLink='/login' class="full-width-btn">
+                    <mat-icon>power_settings_new</mat-icon>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </ng-template>
+</mat-menu>
+</div>
+</div>

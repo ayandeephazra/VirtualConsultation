@@ -1,0 +1,17 @@
+<form [formGroup]="familyHistoryFormGroup" fxLayout="column">
+  <mat-form-field appearance="fill">
+    <input type="text" placeholder="Name" aria-label="Number" matInput #input formControlName="name">
+    <mat-label>Family Member Name*</mat-label>
+    <mat-error *ngIf="familyHistoryFormGroup.get('name').hasError('required')">
+        <p></p>
+    </mat-error>
+  </mat-form-field>
+    <div *ngFor="let issue of MedicalIssues">
+      <mat-checkbox
+                      >
+          {{issue}}
+        </mat-checkbox>
+      </div>
+  <div>&nbsp;</div>
+  <button mat-raised-button>Add</button>
+  </form>

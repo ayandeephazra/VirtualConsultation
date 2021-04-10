@@ -1,0 +1,50 @@
+.home-container{
+  background-color:#F3F6F7;
+  height: 100vh;
+ }
+
+ .view-container{
+   background-color: white;
+   height: 82vh;
+   border-radius: 20px;
+   padding: 10px;
+ }
+
+ .view{
+   padding: 10px;
+ }
+
+ .side-nav{
+   height: 93vh;
+   background-color:  #2AC3A4;
+ }
+
+ .side-nav-image{
+   background-image: url('../../../assets/doctor\ sidebar\ 2.jpg');
+   background-repeat: no-repeat;
+   background-size: contain;
+ }
+
+ .form-group{
+   padding: 10px;
+ }
+
+ mat-card{
+   border-radius: 15px;
+   height: 50vh;
+ }
+
+ button{
+   background-color: #2AC3A4;
+   color: #ffffff;
+ }
+
+ section{
+  padding: 16px;
+  background: #ffffff;
+  margin: 4px 0;
+}
+
+.container{
+  padding: 16px;
+}

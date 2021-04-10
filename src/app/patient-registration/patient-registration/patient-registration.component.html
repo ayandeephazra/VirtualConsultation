@@ -1,0 +1,108 @@
+<div class="register-background" fxLayoutAlign="center center">
+  <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" class="register-card mat-elevation-z3">
+    <div fxFlex="50" class="image-container">
+
+    </div>
+    <div fxFlex="50" class="register-form">
+      <form [formGroup]="patientRegister" fxLayout="column">
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
+          <div fxLayout="column">
+            <div>&nbsp;</div>
+            <div class="mat-title">Register</div>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+          <mat-form-field appearance="fill" fxFlex="45">
+            <mat-label>First Name</mat-label>
+            <input matInput pattern="[a-zA-Z ]*" formControlName="firstName" required>
+            <mat-error *ngIf="patientRegister.get('firstName').hasError('required')">
+              <strong>REQUIRED</strong>
+            </mat-error>
+            <mat-error *ngIf="patientRegister.get('firstName').hasError('pattern')">
+              <strong>First Name Only Contains Alphabets</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill" fxFlex="45">
+            <mat-label>Last Name</mat-label>
+            <input matInput pattern="[a-zA-Z ]*" formControlName="lastName" required>
+            <mat-error *ngIf="patientRegister.get('lastName').hasError('required')">
+              <strong>REQUIRED</strong>
+            </mat-error>
+            <mat-error *ngIf="patientRegister.get('firstName').hasError('pattern')">
+              <strong>Last Name Only Contains Alphabets</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+          <mat-form-field appearance="fill" fxFlex="45">
+            <mat-label class="mat-body-1">Date Of Birth</mat-label>
+            <input readonly matInput [matDatepicker]="picker" placeholder="MM-DD-YYYY" formControlName="dateOfBirth"
+              [min]="minDob" [max]='maxDob' required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker startView="multi-year"></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field appearance="fill" fxFlex="45">
+            <mat-label class="mat-body-1">Gender</mat-label>
+            <mat-select formControlName="gender" required>
+              <mat-option *ngFor="let gender of genderList" [value]="gender">
+                {{gender}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="patientRegister.get('gender').hasError('required')">
+              <strong>REQUIRED</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="5px" fxLayoutAlign="center center">
+          <mat-form-field appearance="fill" fxFlex="45">
+            <mat-label class="mat-body-1">Mobile Number</mat-label>
+            <input matInput placeholder="Mobile Number" formControlName="mobileNumber" type="number" maxlength="10"
+              required>
+            <mat-error *ngIf="patientRegister.get('mobileNumber').hasError('min')">
+              <strong>ENTER VALID PHONE</strong>
+            </mat-error>
+            <mat-error *ngIf="patientRegister.get('mobileNumber').hasError('required')">
+              <strong>REQUIRED</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill" fxFlex="45">
+            <mat-label class="mat-body-1">Email ID</mat-label>
+            <input matInput placeholder="Email ID" formControlName="emailId" required type="email">
+            <mat-error *ngIf="patientRegister.get('emailId').hasError('required')">
+              <strong>REQUIRED</strong>
+            </mat-error>
+            <mat-error *ngIf="patientRegister.get('emailId').hasError('email')">
+              <strong>Enter Valid Email</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="5px" fxLayoutAlign="center center">
+          <mat-form-field appearance="fill" fxFlex="45">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" minlength="8" type="password" required>
+            <mat-error *ngIf="patientRegister.get('password').hasError('required')">
+              <strong>REQUIRED</strong>
+            </mat-error>
+            <mat-error *ngIf="patientRegister.get('password').hasError('minLength')">
+              <strong>Alteast 8 Characters Required </strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill" fxFlex="45">
+            <mat-label>Retype Password</mat-label>
+            <input matInput type="password" formControlName="retypePassword" required>
+            <mat-error *ngIf="patientRegister.get('retypePassword').hasError('required')">
+              <strong>REQUIRED</strong>
+            </mat-error>
+            <mat-error *ngIf="patientRegister.get('retypePassword').hasError('pattern')">
+              <strong>Password Doesnt Match</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="5px" fxLayoutAlign="center center">
+          <button mat-raised-button fxFlex="45" (click)="register()" >Register</button>
+          <button mat-raised-button fxFlex="45" routerLink="/login" >Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

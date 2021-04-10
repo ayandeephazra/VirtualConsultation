@@ -1,0 +1,27 @@
+<form [formGroup]="symptomFormGroup"  >
+<div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+  <mat-form-field class="symptom-form-field" fxFlex="40" appearance="fill">
+    <input type="text" placeholder="SYMPTOM" aria-label="Number" matInput #input [value]="input.value.toUpperCase()" formControlName="symptom">
+    <mat-label>SYMPTOM*</mat-label>
+    <mat-error *ngIf="symptomFormGroup.get('symptom').hasError('required')">
+        <p></p>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="symptom-form-field" fxFlex="40"  appearance="fill">
+    <mat-label>SEVERITY*</mat-label>
+    <mat-select formControlName="severity">
+        <mat-option *ngFor="let x of severities" [value]="x">{{x}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="symptomFormGroup.get('severity').hasError('required')">
+        <p></p>
+    </mat-error>
+  </mat-form-field>
+  <div fxFlex="10" fxLayoutAlign="center start">
+  <button mat-raised-button >Add</button>
+  </div>
+</div>
+<div>
+
+</div>
+</form>
